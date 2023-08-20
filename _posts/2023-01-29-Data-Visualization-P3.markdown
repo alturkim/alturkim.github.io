@@ -2,7 +2,7 @@
 layout: post
 title:  "Richer Nations, Higher Power Consumption: A Data Story.
 "
-date:   2023-01-23 15:39:08 +0300
+date:   2023-01-27 15:39:08 +0300
 categories: project blogpost
 ---
 # Dataset
@@ -14,7 +14,7 @@ This project tells the story of the relationship between **GDP** and **Power Con
 The story is designed by [Flourish](https://flourish.studio/), a web-based visualization tool. The story narrated and animated and can be view in a video format in the link below. The story provides a finer control through time by using a time slider that allows for navigating to any year covered by the data. Finally, the seven regions in the data are color coded for clarity.
 # Screen Shot
 <p align="center">
-  <img alt="img-name" src="DVNDP4.PNG">
+  <img alt="img-name" src="assets/imgs/DVNDP4.PNG">
   <br>
     <em>Screen Shot of the Data Story, for the full interactive and narrated version see the link below</em>
 </p>

@@ -22,7 +22,7 @@ The dashboard utilizes sales data to show:
 All visuals utilize a color-blind-friendly palette, with effective use of color to call attention to the important points in the visualizations. Navigation is made easy with clear use of alignment. Finally, a text hierarchy is utilized to organize the information on the screen.
 # Screen Shot
 <p align="center">
-  <img alt="img-name" src="DVNDP2.PNG">
+  <img alt="img-name" src="assets/imgs/DVNDP2.PNG">
   <br>
     <em>Screen Shot of the dashboard, for the full interactive version see the link below</em>
 </p>

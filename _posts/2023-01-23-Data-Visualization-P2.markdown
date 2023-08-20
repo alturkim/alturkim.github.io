@@ -14,7 +14,7 @@ The aim of the project is to study global historical trends by building a cohere
 The story features five snapshots that are described by a sequential narrative on the text tabs showing above the visualizations. The story provides a finer control through time by using a time slider that allows for navigating to any year covered by the data. Finally, the seven regions in the data are color coded for clarity.
 # Screen Shot
 <p align="center">
-  <img alt="img-name" src="DVNDP3.PNG">
+  <img alt="img-name" src="assets/imgs/DVNDP3.PNG">
   <br>
     <em>Screen Shot of the Data Story, for the full interactive version see the link below</em>
 </p>

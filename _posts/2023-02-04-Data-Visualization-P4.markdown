@@ -2,7 +2,7 @@
 layout: post
 title:  "How Suicide Cases are Distributed Across Ages? A Data Story
 "
-date:   2023-01-23 15:39:08 +0300
+date:   2023-01-29 15:39:08 +0300
 categories: project blogpost
 ---
 ### Note:
@@ -18,14 +18,14 @@ The dataset contains the registered number of suicide cases across England and W
 # Original Visualization
 
 <p align="center">
-  <img alt="img-name" src="Medium1.webp">
+  <img alt="img-name" src="assets/imgs/Medium1.webp">
   <br>
     <em>This is a snapshot of the story, for the full animated story visit this <a href="https://www.ons.gov.uk/visualisations/dvc661/suicides/index.html">link</a>.</em>
 </p>
 
 # Change over Time Story
 <p align="center">
-  <img alt="img-name" src="Medium2.webp">
+  <img alt="img-name" src="assets/imgs/Medium2.webp">
   <br>
     <em>The original visualization from the Office for National Statistics. An interactive version is available through the this <a href="https://public.flourish.studio/story/1802895/">link</a>.</em>
 </p>
