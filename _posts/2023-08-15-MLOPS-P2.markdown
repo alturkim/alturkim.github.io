@@ -10,6 +10,7 @@ categories: project blogpost
 This is a blog post about my recent project on building End-to-End ML Pipeline. See the links below for the code and the Weight and Biases logs and visualizations.
 - [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
 - [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+
 ***
 
 # Introduction
