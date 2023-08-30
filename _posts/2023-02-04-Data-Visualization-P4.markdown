@@ -8,15 +8,16 @@ categories: project blogpost
 ***Note***:
 This article was originally published on [Medium](https://medium.com/@mustafa.a.alturki/how-suicide-cases-are-distributed-across-ages-1f6f5167e7c1).
 
-_______
+---
 
 In this blog post, we go through an animated data story that explores the question: what is the age group that has the highest suicide cases across the years?
 
 The post will also discuss how the suggested data story is an improvement over the visualization published originally with the dataset.
 
-# Dataset
+## Dataset
 The dataset contains the registered number of suicide cases across England and Wales, from 1981 to 2017, for ages ranging from 10 to 89 year-old. The original dataset can be found in this [link](https://www.ons.gov.uk/visualisations/dvc661/suicides/datadownload.csv).
-# Original Visualization
+
+## Original Visualization
 
 <p align="center">
   <img alt="img-name" src="/assets/imgs/Medium1.webp">
@@ -24,7 +25,7 @@ The dataset contains the registered number of suicide cases across England and W
     <em>This is a snapshot of the story, for the full animated story visit this <a href="https://www.ons.gov.uk/visualisations/dvc661/suicides/index.html">link</a>.</em>
 </p>
 
-# Change over Time Story
+## Change over Time Story
 <p align="center">
   <img alt="img-name" src="/assets/imgs/Medium2.webp">
   <br>
@@ -67,7 +68,7 @@ The dataset is limited to the registered cases, which raise the question on how 
 
 Furthermore, any conclusion drawn from the data is only applicable to England and Wales, and cannot be directly generalized without more diverse data.
 
-# References:
+## References:
 The Data Story: https://public.flourish.studio/story/1802895/
 
 The Original Visualization: https://www.ons.gov.uk/visualisations/dvc661/suicides/index.html
