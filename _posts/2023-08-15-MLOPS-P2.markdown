@@ -24,7 +24,7 @@ __*NOTE*__: The modeling part in this project is just a baseline since the focus
 <p align="center">
   <img alt="mlops" src="/assets/imgs/MLOps-Neal-Analytics.png">
   <br>
-    <em>Source: Neal Analytics</a>.</em>
+    <em>Source: Neal Analytics.</em>
 </p>
 
 MLOps is a collection of best practices around building ML systems for production. MLOps addresses multiple ML system developmental aspects like experiment tracking, and operational aspects like scalability, reliability, automation and reproducibility. The aim is to streamline the operations around ML system development, deployment, monitoring and maintenance to allow engineers to focus on the modeling aspect and reduce costs.
