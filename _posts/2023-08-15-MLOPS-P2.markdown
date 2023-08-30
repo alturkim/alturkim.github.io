@@ -75,7 +75,7 @@ An example MLproject file can be found [here](https://mlflow.org/docs/latest/pro
 
 ### Orchestration
 Individual pipeline components are built as a standalone MLflow project receiving parameters that possibly contains paths to input and output artifacts.
-MLflow offers two methods to execute a project, through MLflow CLI, or its python API. Either method can be used in a main MLflow project that represents the orchestration script for the entire pipeline. The main project can be set to receive a parameter indicating the components to be executed, otherwise, it executes the entire pipeline, see the Usage section in the [github repo README file](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices){:target="_blank"} for more details.
+MLflow offers two methods to execute a project, through MLflow CLI, or its python API. Either method can be used in a main MLflow project that represents the orchestration script for the entire pipeline. The main project can be set to receive a parameter indicating the components to be executed, otherwise, it executes the entire pipeline, see the Usage section in the github repo [README file](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices){:target="_blank"} for more details.
 
 Individual components can be stored in a shared repository that collect components from various projects. When needed, a specific component can be executed by a main script just by specifying the repo link, this is useful to promote **reusability** of components across projects.
 
