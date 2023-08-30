@@ -8,15 +8,15 @@ categories: project blogpost
 
 ### Links
 This is a blog post about my recent project on building End-to-End ML Pipeline. See the links below for the code and the Weight and Biases logs and visualizations.
-- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
-- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices){:target="_blank"}
+- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/){:target="_blank"}
 
 ---
 
 ## Introduction
 The project builds an end-to-end reproducible Machine Learning pipeline to predict prices of rental properties based on various features. The pipeline is reproducible and constructed such that individual components can be run independently from other parts.
 
-The project employs MLOps tools and best practices. Mainly, the pipeline components are built using [Weights and Biases](https://wandb.ai/) for **Experiement Tracking** and **Artifact Storage and Versioning**. Furthermore, [MLFlow](https://mlflow.org/) is used for **Orchestration** and **Reproducibility** and finally, [Hydra](https://hydra.cc/) is used for **Configuration Management**.
+The project employs MLOps tools and best practices. Mainly, the pipeline components are built using [Weights and Biases](https://wandb.ai/){:target="_blank"} for **Experiement Tracking** and **Artifact Storage and Versioning**. Furthermore, [MLFlow](https://mlflow.org/){:target="_blank"} is used for **Orchestration** and **Reproducibility** and finally, [Hydra](https://hydra.cc/){:target="_blank"} is used for **Configuration Management**.
 
 __*NOTE*__: The modeling part in this project is just a baseline since the focus here is on the MLops aspect of the analysis.
 
@@ -53,7 +53,7 @@ Runs correspond to some scripts that might be modified while experimenting, furt
 An important aspect of tracking is that runs can log any variable that you are interesting in tracking across runs. Metrics and data statistics are a good example here. Furthermore, W&B will capture automatic logs that reflect various aspects of resources utilization and the environment.
 
 ## Orchestration and Reproducibility
-Building components for a pipeline is not something unique to MLOps, components can be functions, scripts and/or module, however, [MLflow](https://mlflow.org/) offers a unifying way of packaging components that is useful in our context. So what is MLflow?
+Building components for a pipeline is not something unique to MLOps, components can be functions, scripts and/or module, however, [MLflow](https://mlflow.org/){:target="_blank"} offers a unifying way of packaging components that is useful in our context. So what is MLflow?
 
 MLflow is an open source MLOps platform that offers solutions to multiple stages of the ML system lifecycle, the main five components of the platform are:
 - [MLflow Tracking.](https://mlflow.org/docs/latest/tracking.html#mlflow-tracking){:target="_blank"}
@@ -98,12 +98,12 @@ MLflow offers both deployment options through its [**Models component**](https:/
 ## Visualization
 W&B offers automatic visualization of pipeline components with varying level of details. This is a great tool to explore lineage of certain artifacts and to visualize the workflow on a higher level.
 
-[This link ](https://wandb.ai/alturkim/nyc_airbnb/artifacts/model_export/random_forest_export/v19/lineage) provides an interactive visualization of the entire pipeline we built for this project.
+[This link ](https://wandb.ai/alturkim/nyc_airbnb/artifacts/model_export/random_forest_export/v19/lineage){:target="_blank"} provides an interactive visualization of the entire pipeline we built for this project.
 
 
 
 ## Links
 See the links below for the code and the Weight and Biases logs and visualizations.
-- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
-- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices){:target="_blank"}
+- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/){:target="_blank"}
 
