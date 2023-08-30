@@ -10,6 +10,7 @@ categories: project blogpost
 This is a blog post about my recent project on building End-to-End ML Pipeline. See the links below for the code and the Weight and Biases logs and visualizations.
 - [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
 - [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+***
 
 # Introduction
 The project builds an end-to-end reproducible Machine Learning pipeline to predict prices of rental properties based on various features. The pipeline is reproducible and constructed such that individual components can be run independently from other parts.
@@ -34,6 +35,7 @@ An important aspect to consider when building a component is to make it possible
 
 # Experiment Tracking
 An important part of building an ML system is modeling. Modeling usually is an experimental task, where different ML algorithms, preprocessing techniques, hyperparameters settings and other factors are manipulated to reach the desirable performance. Keeping a record of what collection of those factors have worked well and should be investigated further, and what have not worked and should be abandon is a tedious process. Hence the need for automated **Experiment Tracking**.
+
 ## Terminology
 There are many Experiment Tracking tools and each might have its own terminology. Here we explore the terminology of Weight and Biases (W&B):
 
@@ -89,7 +91,7 @@ The ultimate goal of building an ML pipeline is to produce an **Inference Artifa
 
 Model deployment comes in different flavors: **Online** and **Batch**. Online or real-time deployment generate predictions for a single data point. **Latency** here is the most critical factor. On the other hand, Batch deployment, as the name indicates, process a batch of data at one time, hence, **throughput** here is of highest importance.
 
-MLflow offers both deployment options through its [**Models** component](https://mlflow.org/docs/latest/models.html#mlflow-models){:target="_blank"}, using MLflow Models CLI, you can run the ``predict`` command and pass the model and input data file for Batch mode, or you can run the ``server`` command to create a **REST API** that can be used for the Online mode.
+MLflow offers both deployment options through its [**Models** component](https://mlflow.org/docs/latest/models.html#mlflow-models){:target="_blank"}, using MLflow Models CLI, you can run the ``predict`` command and pass the model and input data file for Batch mode, or you can run the ``serve`` command to create a **REST API** that can be used for the Online mode.
 
 
 # Visualization
