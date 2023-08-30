@@ -11,7 +11,7 @@ This is a blog post about my recent project on building End-to-End ML Pipeline. 
 - [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
 - [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
 
-***
+---
 
 # Introduction
 The project builds an end-to-end reproducible Machine Learning pipeline to predict prices of rental properties based on various features. The pipeline is reproducible and constructed such that individual components can be run independently from other parts.
