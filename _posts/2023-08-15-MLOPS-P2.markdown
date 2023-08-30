@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "Building A Reproducible Machine Learning Pipeline with Weights and Biases and MlFlow
+"
+date:   2023-08-15 15:39:08 +0300
+categories: project blogpost
+---
+
+## Links
+This is a blog post about my recent project on building End-to-End ML Pipeline. See the links below for the code and the Weight and Biases logs and visualizations.
+- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
+- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+
+# Introduction
+The project builds an end-to-end reproducible Machine Learning pipeline to predict prices of rental properties based on various features. The pipeline is reproducible and constructed such that individual components can be run independently from other parts.
+
+The project employs MLOps tools and best practices. Mainly, the pipeline components are built using [Weights and Biases](https://wandb.ai/) for **Experiement Tracking** and **Artifact Storage and Versioning**. Furthermore, [MLFlow](https://mlflow.org/) is used for **Orchestration** and **Reproducibility** and finally, [Hydra](https://hydra.cc/) for **Configuration Management**.
+
+__*NOTE*__: The modeling part in this project is just a baseline since the focus here is on the MLops aspect of the analysis.
+
+# What is MLOps?
+<p align="center">
+  <img alt="mlops" src="/assets/imgs/MLOps-Neal-Analytics.png">
+  <br>
+    <em>Source: Neal Analytics</a>.</em>
+</p>
+
+MLOps is a collection of best practices around building ML systems for production. MLOps addresses multiple ML system developmental aspects like experiment tracking, and operational aspects like scalability, reliability, automation and reproducibility. The aim is to streamline the operations around ML system development, deployment, monitoring and maintenance to allow engineers to focus on the modeling aspect and reduce costs.
+
+# Pipelines and Components
+Building an ML system requires going beyond Jupyter Notebooks and fragmented scripts. This is where the concept of a pipeline comes into play. A pipeline is a chain of components where each components is responsible for a single task, what constitutes a single task is left to the designer's judgment. Furthermore, each component expects an input and possibly produces an output that is fed to the next component in the chain. It is tempting to think about pipelines as linear chains, however that is not always the case. 
+
+An important aspect to consider when building a component is to make it possible to independently run individual components in isolation. To achieve this, all inputs and outputs must be persisted in a storage. This way, when a certain component fails while running the pipeline, there is no need to re-run successful components since their output is available.
+
+# Experiment Tracking
+An important part of building an ML system is modeling. Modeling usually is an experimental task, where different ML algorithms, preprocessing techniques, hyperparameters settings and other factors are manipulated to reach the desirable performance. Keeping a record of what collection of those factors have worked well and should be investigated further, and what have not worked and should be abandon is a tedious process. Hence the need for automated **Experiment Tracking**.
+## Terminology
+There are many Experiment Tracking tools and each might have its own terminology. Here we explore the terminology of Weight and Biases (W&B):
+
+- **Run**: a single unit of computation, it represents an execution of a piece of code.
+- **Artifact**: a file or a folder that is consumed or produced by a run. 
+- **Experiment**: a group of related runs. 
+- **Project**: a collection of all experiments and related artifacts.
+
+
+## Automatic Versioning
+Runs correspond to some scripts that might be modified while experimenting, furthermore, the artifact, consumed or produced by that run, can also be different from run to run, hence the need to versioning. W&B associates each run with the **Git commit** of the executed version of the code. it also automatically version artifact that are logged by the run, all versions are retrievable by simply specifying the version number or ``latest`` for the the latest version.
+
+## Logging
+An important aspect of tracking is that runs can log any variable that you are interesting in tracking across runs. Metrics and data statistics are a good example here. Furthermore, W&B will capture automatic logs that reflect various aspects of resources utilization and the environment.
+
+# Orchestration and Reproducibility
+Building components for a pipeline is not something unique to MLOps, components can be functions, scripts and/or module, however, [MLflow](https://mlflow.org/) offers a unifying way of packaging components that is useful in our context. So what is MLflow?
+
+MLflow is an open source MLOps platform that offers solutions to multiple stages of the ML system lifecycle, the main five components of the platform are:
+- [MLflow Tracking.](https://mlflow.org/docs/latest/tracking.html#mlflow-tracking){:target="_blank"}
+- [MLflow Projects.](https://mlflow.org/docs/latest/projects.html#mlflow-projects){:target="_blank"}
+- [MLflow Models.](https://mlflow.org/docs/latest/models.html#mlflow-models){:target="_blank"}
+- [MLflow Model Registry.](https://mlflow.org/docs/latest/model-registry.html#mlflow-model-registry){:target="_blank"}
+- [MLflow Recipes.](https://mlflow.org/docs/latest/recipes.html#mlflow-recipes){:target="_blank"}
+
+For the purpose of this project we are going to use MLflow Models (more on this later) and MLflow Projects components.
+
+## what is an MLflow project?
+It is a collection of code, environment definition and project definition. The code is your data cleaning script or your training module, it can be as simple or as complex as it gets in term of file structure. Furthermore, MLflow is language agnostic, which means code can be written in any languages, and you can use different languages for different tasks.
+
+Next comes the environment needed to execute the code. The environment can be defined with Conda, virtualenv or Docker. This is important for **reproducibility**. When an MLflow project is run, an environment will be created according to the environment file provided in the project. Environment files are a simple YAML file that list dependencies or a Docker image to be used.
+
+Finally, a project definition is stored in an MLproject file, which is a YAML-formatted file that specifies basic information about the project like its name and environment. It also contains the entry point(s) of the project, which is a command to execute a .py or a .sh file when the project is run. Each entry point, can include the list of parameters needed to execute the command, the parameters can be listed with their description, data type, and default values, if any.
+An example MLproject file can be found [here](https://mlflow.org/docs/latest/projects.html#mlproject-file).
+
+
+## Orchestration
+Individual pipeline components are built as a standalone MLflow project receiving parameters that possibly contains paths to input and output artifacts.
+MLflow offers two methods to execute a project, through MLflow CLI, or its python API. Either method can be used in a main MLflow project that represents the orchestration script for the entire pipeline. The main project can be set to receive a parameter indicating the components to be executed, otherwise, it executes the entire pipeline, see the Usage section in the [github repo README file](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices){:target="_blank"} for more details.
+
+Individual components can be stored in a components repository that collect components from various projects, when needed, a specific component can be executed by a main script just by specifying the repo link, this is useful to promote **reusability** of components across projects.
+
+# Data Testing
+Different aspects of an ML system can be tested, for example, testing code is a crucial part that can be done by building **unit tests**, testing data before ingestion is important to avoid having a **Garbage In, Garbage Out** situation, and finally model testing is important for evaluation, and checking for model drift. Here we explore data testing briefly. 
+
+Building a model is done with certain assumptions about the data, e.g. range of values for numerical features, possible values for categorical features, data type of various columns, and so. These assumptions must be verified especially when receiving new data after training.
+
+Data tests can be of two different types: Deterministic and Non-deterministic. Deterministic Tests are those performed on measures not involving uncertainty. This includes for example checking the dataset's dimensions and range of the numerical columns.
+On the other hand, Non-deterministic or Statistical Tests involves measurements that are inherently uncertain, i.e. measurements of random variables like the mean and standard deviation. This category of tests employed **Hypothesis Testing** for example to compare the distribution of any new data against a reference dataset that is used to train the initial model. Failing Data tests does not necessarily call for discarding the data, instead a careful attention should be paid to the reason of failure before using the data.
+
+# Deployment and MLflow Model
+The ultimate goal of building an ML pipeline is to produce an **Inference Artifact**. Inference artifacts should be end-to-end, which means they should includes everything you need to do to move from raw data to final prediction, including preprocessing, feature engineering and any other necessary step. An inference artifact is stored in **Model Repository** which is a part of W&B. A model ready for production can be marked with a special tag, e.g. prod, this way, a deployment server can simply specify the appropriate tag when pulling the model for serving
+
+Model deployment comes in different flavors: **Online** and **Batch**. Online or real-time deployment generate predictions for a single data point. **Latency** here is the most critical factor. On the other hand, Batch deployment, as the name indicates, process a batch of data at one time, hence, **throughput** here is of highest importance.
+
+MLflow offers both deployment options through its [**Models** component](https://mlflow.org/docs/latest/models.html#mlflow-models){:target="_blank"}, using MLflow Models CLI, you can run the ``predict`` command and pass the model and input data file for Batch mode, or you can run the ``server`` command to create a **REST API** that can be used for the Online mode.
+
+
+# Visualization
+W&B offers automatic visualization of pipeline components with varying level of details. This is a great tool to explore lineage of certain artifacts and to visualize the workflow on a higher level.
+
+[This link provides an interactive version of this visualization.](https://wandb.ai/alturkim/nyc_airbnb/artifacts/model_export/random_forest_export/v19/lineage)
+
+
+
+## Links
+See the links below for the code and the Weight and Biases logs and visualizations.
+- [Github link](https://github.com/alturkim/build-ml-pipeline-for-short-term-rental-prices)
+- [WandB Project link](https://wandb.ai/alturkim/nyc_airbnb/)
+

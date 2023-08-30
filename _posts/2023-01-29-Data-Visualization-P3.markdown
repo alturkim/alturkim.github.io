@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Richer Nations, Higher Power Consumption: A Data Story.
+title:  "Richer Nations, Higher Power Consumption: A Data Story
 "
 date:   2023-01-27 15:39:08 +0300
 categories: project blogpost

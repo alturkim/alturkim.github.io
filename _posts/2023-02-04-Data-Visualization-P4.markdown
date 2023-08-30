@@ -5,9 +5,10 @@ title:  "How Suicide Cases are Distributed Across Ages? A Data Story
 date:   2023-01-29 15:39:08 +0300
 categories: project blogpost
 ---
-### Note:
+***Note***:
 This article was originally published on [Medium](https://medium.com/@mustafa.a.alturki/how-suicide-cases-are-distributed-across-ages-1f6f5167e7c1).
 
+_______
 
 In this blog post, we go through an animated data story that explores the question: what is the age group that has the highest suicide cases across the years?
 
