@@ -35,6 +35,11 @@ Building an ML system requires going beyond Jupyter Notebooks and fragmented scr
 An important aspect to consider when building a component is to make it possible to independently run individual components in isolation. To achieve this, all inputs and outputs must be persisted in a storage. This way, when a certain component fails while running the pipeline, there is no need to re-run successful components since their output is available.
 
 ## Experiment Tracking
+<p align="center">
+  <img alt="wandb" src="/assets/imgs/wandb.jpg">
+  <br>
+    <a href="https://wandb.ai" target="_blank"><em>Weights and Biases.</em></a> 
+</p>
 An important part of building an ML system is modeling. Modeling usually is an experimental task, where different ML algorithms, preprocessing techniques, hyperparameters settings and other factors are manipulated to reach the desirable performance. Keeping a record of what collection of those factors have worked well and should be investigated further, and what have not worked and should be abandon is a tedious process. Hence the need for automated **Experiment Tracking**.
 
 ### Terminology
@@ -53,6 +58,11 @@ Runs correspond to some scripts that might be modified while experimenting, furt
 An important aspect of tracking is that runs can log any variable that you are interesting in tracking across runs. Metrics and data statistics are a good example here. Furthermore, W&B will capture automatic logs that reflect various aspects of resources utilization and the environment.
 
 ## Orchestration and Reproducibility
+<p align="center">
+  <img alt="mlflow" src="/assets/imgs/mlflow.png">
+  <br>
+    <a href="https://mlflow.org" target="_blank"><em>MlFlow.</em></a> 
+</p>
 Building components for a pipeline is not something unique to MLOps, components can be functions, scripts and/or module, however, [MLflow](https://mlflow.org/){:target="_blank"} offers a unifying way of packaging components that is useful in our context. So what is MLflow?
 
 MLflow is an open source MLOps platform that offers solutions to multiple stages of the ML system lifecycle, the main five components of the platform are:
