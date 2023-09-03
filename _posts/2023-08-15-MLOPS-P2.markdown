@@ -98,6 +98,11 @@ Data tests can be of two different types: Deterministic and Non-deterministic. *
 On the other hand, **Non-deterministic or Statistical Tests** involves measurements that are inherently uncertain, i.e. measurements of random variables like means and standard deviations. This category of tests employs **Hypothesis Testing** for example to compare the distribution of new data against a reference dataset that is used to train the initial model. Failing data tests does not necessarily call for discarding the data, instead a careful attention should be paid to the reason of failure before using the data.
 
 ## Deployment and MLflow Model
+<p align="center">
+  <img alt="deployment" src="/assets/imgs/deployment.png">
+  <br>
+    <em>Source: stackify.com.</em>
+</p>
 The ultimate goal of building an ML pipeline is to produce an **Inference Artifact**. Inference artifacts should be end-to-end, which means they should includes everything you need to do to move from raw data to final predictions, including preprocessing, feature engineering and any other necessary steps. An inference artifact is stored in the **Model Repository** which is a part of W&B. A model that is ready for production can be marked with a special tag, e.g. ``prod``, this way, a deployment server can simply specify the appropriate tag when pulling the model for serving.
 
 Model deployment comes in two different flavors: **Online** and **Batch**. Online or real-time deployment generates predictions for a single data point. **Latency** here is the most critical factor. On the other hand, Batch deployment, as the name suggests, processes a batch of data at one time, hence, **throughput** here is of highest importance.
