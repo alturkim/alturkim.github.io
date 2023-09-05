@@ -40,7 +40,7 @@ An important aspect to consider when building a component is to make it possible
   <br>
     <a href="https://wandb.ai" target="_blank"><em>Weights and Biases.</em></a> 
 </p>
-An important part of building an ML system is modeling. Modeling usually is an experimental task, where different ML algorithms, preprocessing techniques, hyperparameters settings and other factors are manipulated to reach the desirable performance. Keeping a record of what collection of those factors have worked well and should be investigated further, and what have not worked and should be abandon is a tedious process. Hence the need for automated **Experiment Tracking**.
+An important part of building an ML system is modeling. Modeling usually is an experimental task, where different ML algorithms, preprocessing techniques, hyperparameters settings and other factors are manipulated to reach the desirable performance. Keeping a record of what collection of those factors have worked well and should be investigated further, and what have not worked and should be abandoned is a tedious process. Hence the need for automated **Experiment Tracking**.
 
 ### Terminology
 There are many Experiment Tracking tools and each might have its own terminology. Here we explore the terminology of Weight and Biases (W&B):
