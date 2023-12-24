@@ -5,10 +5,11 @@ title:  "NLP Q&As Series: Part 1: Language Models and Transformer.
 date:   2023-12-17 15:39:08 +0300
 categories: blogpost
 ---
-
+## Intro
 This is a series of short questions and answers about NLP, originally shared on my LinkedIn page.
+
 ---
----
+
 
 ## Q1: What is a Language Model?
 A language model serves as a probabilistic representation of one or more languages, determining the likelihood of a given sequence of words belonging to a particular language. Essentially, it answers the question: 
@@ -35,6 +36,7 @@ Applications of language models are diverse, but a common thread is that any app
     <em><a href="https://arxiv.org/abs/2303.18223">Source: A Survey of Large Language Models.</a></em>
 </p>
 
+---
 
 ## Q2: Describe the Transformer Architecture in a high level.
 The Transformer model is a seq2seq, i.e. it processes input sequences and generates output sequences. 
@@ -45,13 +47,13 @@ The journey of a sentence in the Transformer involves two main components: the E
  - Tokenization: The sentence is divided into tokens.
  - Embeddings: Each token is transformed into a high-dimensional vector.
  - Positional Encoding: Information about the token's position in the sentence is added to its embeddings.
-_______________________________________________________________
+
 **Encoder:**
 The Encoder consists of multiple (e.g., 6) layers, each mainly having:
  - Multi-Head Attention: Tokens’ embeddings are passed to a neural network that updates them considering information from other tokens in the input.
  - Feed-Forward: A neural network applied to each token’s embeddings separately. 
 
-_______________________________________________________________
+
 **Decoder:**
 The Decoder takes two inputs: the Encoder’s output and previously generated tokens (as embeddings). The model generates the output sequence one token at a time.
 
@@ -60,7 +62,7 @@ A Decoder also consists of multiple layers, each mainly having:
  - Multi-Head Attention: For each generated token, updates its embeddings considering information from Encoder output.
 - Feed-Forward: Utilizes a similar structure as in the Encoder.
 
-_______________________________________________________________
+
 **Finally:** The current output token is determined using a Linear Layer followed by a Softmax.
 
 Note: This is a high-level description, some parts are left out, and some are oversimplified.
