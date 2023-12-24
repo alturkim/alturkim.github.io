@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Q&As Series: Part 1: Language Models and Transformer.
+title:  "NLP Q&As Series - Part 1: Language Models and Transformer.
 "
 date:   2023-12-17 15:39:08 +0300
 categories: blogpost
@@ -18,6 +18,7 @@ What is the probability of this word sequence being part of the language?
 Consider two statements:
 1. "Mohammed studied business in college."
 2. "college Mohammed business in studied."
+
 Statement 1 has a higher probability of being a valid English sentence compared to Statement 2.
 
 Language models have evolved from statistical models, such as n-gram language models, to neural language models based on various types of recurrent neural networks. Presently, they predominantly rely on Transformers and are often referred to as Large Language Models (LLM).
@@ -49,12 +50,14 @@ The journey of a sentence in the Transformer involves two main components: the E
  - Positional Encoding: Information about the token's position in the sentence is added to its embeddings.
 
 **Encoder:**
+
 The Encoder consists of multiple (e.g., 6) layers, each mainly having:
  - Multi-Head Attention: Tokens’ embeddings are passed to a neural network that updates them considering information from other tokens in the input.
  - Feed-Forward: A neural network applied to each token’s embeddings separately. 
 
 
 **Decoder:**
+
 The Decoder takes two inputs: the Encoder’s output and previously generated tokens (as embeddings). The model generates the output sequence one token at a time.
 
 A Decoder also consists of multiple layers, each mainly having:
