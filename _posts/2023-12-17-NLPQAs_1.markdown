@@ -75,3 +75,23 @@ Note: This is a high-level description, some parts are left out, and some are ov
   <br>
     <em><a href="https://arxiv.org/abs/1706.03762">Source: Attention is All You Need.</a></em>
 </p>
+
+---
+
+## Q3: What is Attention?
+
+The concept of attention goes beyond its application in the Transformer, it is not exclusive to NLP models either. Attention refers to a mechanism by which a model directs its focus or attends to specific segments of the input aiming to enhance the output, or more precisely, to generate a more effective representation that contributes to better output.
+
+The following is an explanation of how this is done in the Transformer model.
+
+Each token is associated with three vectors: Query, Key, and Value (q, k, v). 
+
+When processing the i_th token, a dot product is performed between its query vector q_i and the key vectors of all tokens. Each dot product gives a numerical result that indicates the “compatibility” between the i_th token and all other tokens.
+
+Previous results are then scaled and a Softmax is applied on them. The outcome is a set of attention weights—one for each token. These weights are now multiplied by the corresponding value vectors and the resulting vectors are added together.
+
+So essentially, the output of the attention operation for the i_th token is a weighted sum of the value vectors of all tokens, the weights are calculated by a scaled dot product between the i_th query vector and the all key vectors.
+
+Next Q&A: What is Self-Attention, Cross-Attention, Multi-head Attention, and Masked Attention?
+
+Stay tuned.
